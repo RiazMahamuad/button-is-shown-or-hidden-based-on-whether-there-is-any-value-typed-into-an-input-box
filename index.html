@@ -1,0 +1,65 @@
+ <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="/dist/output.css" rel="stylesheet">
+    <link href="/src/input.css" rel="stylesheet">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <title>Document</title>
+</head>
+<body class="bg-teal-600">
+    <h1 class="Tsm text-3xl font-bold m-auto text-center text-white ">
+        button Hide And Show
+      </h1><br>
+      <div class="contain min-h-screen   bg-gray-400 flex items-center m-auto ">
+        <div class="input-box m-auto flex ">
+            <input  id="inp1" placeholder="Send a message" class="Ism relative w-56 h-8 p-3 m-2 bg-white border shadow-2xl rounded-lg  outline-none">
+            <button id="Btn"  class=" hidden   w-16 h-8 m-2 bg-gray-600 shadow-2xl rounded-lg text-white "><i class="fa fa-send-o gap-1">Send</i></button>
+         </div>
+         
+      </div>
+      <style>
+        @keyframes FadeIn {
+               from {
+                   opacity: 0;
+                   transform: translateX(-100px);
+               }
+
+               to {
+                   opacity: 1;
+                   transform: translateX(0px);
+               }
+           }
+
+           .hidden {
+               animation: FadeIn 1s ease-out;
+           }
+           @media (max-width: 640px) {
+        .Tsm{
+            font-size: small;
+        }
+        .Ism{
+            width: auto;
+        }
+    }
+   </style>
+    
+      <script>
+        var input=document.getElementById("inp1");
+       
+        input.addEventListener('input',function(){
+            var btn=document.getElementById("Btn");
+            if(input.value.trim()!==""){
+            btn.style.display="block";
+        }
+        else{
+            btn.style.display="none";
+        }
+        })
+        
+      </script>
+</body>
+</html> 
+
